@@ -4,7 +4,7 @@ def get_input_parameters():
         original_list[i] = int(original_list[i])
 
     shift = int(input('Сдвиг: '))
-    shift = (abs(shift) % len(original_list)) * (shift**0)  #расчёт сдвига больше списка
+    shift = (abs(shift) % len(original_list)) * (shift**0)  #расчёт сдвига больше списка и отрицательного сдвига
     number_list = []
     print('Изначальный список: ', end='')
 
