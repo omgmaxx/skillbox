@@ -1,12 +1,13 @@
 def get_input_parameters():
+    shift = int(input('Сдвиг: '))
+
     original_list = input('Изначальный список: ').strip('[]').replace(' ', '').split(',')
     for i in range(len(original_list)):
         original_list[i] = int(original_list[i])
 
-    shift = int(input('Сдвиг: '))
+
     shift = (abs(shift) % len(original_list)) * (shift**0)  #расчёт сдвига больше списка и отрицательного сдвига
-    number_list = []
-    print('Изначальный список: ', end='')
+    print('')
 
     return int(shift), original_list
     pass
