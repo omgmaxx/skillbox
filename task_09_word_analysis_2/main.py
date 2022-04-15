@@ -1,45 +1,30 @@
 def get_input_parameters():
-    """
-    Получаем входное слово
+    word = str(input('Введите слово: '))
 
-    :return: например: abccba
-    :rtype: str
-    """
-    # TODO: в этой функции пишем весь необходимый код для
-    #  получения входных параметров.
-    #  Логику расчётов тут не программируем
+    return word
     pass
 
 
 def display_result(is_palindrome):
-    """
-    Выводим список оставшихся видеокарт
+    if is_palindrome == True:
+        print('\n\nСлово является палиндромом')
+    else:
+        print('\n\nСлово не является палиндромом')
 
-    :param is_palindrome: является ли палиндромом, например: True
-    :type is_palindrome: bool
-    """
-    # TODO: в этой функции пишем весь необходимый код
-    #  для вывода результата в нужном формате.
-    #  Логику расчётов тут не программируем
     pass
 
 
 def check_palindrome(word):
-    """
-    Проверяем является ли слово палиндромом.
+    word_list = list(word)
+    check = True
 
-    :param word: слово, например: abccba
-    :type word: str
+    for x in range(len(word_list)):
+        y = len(word_list)-1 - x
+        if word_list[x] != word_list[y]:
+            check = False
+            break
 
-    :return: является ли слово палиндром, например: True
-    :rtype: bool
-    """
-    # TODO: в этой функции пишем логику проверки строки на палиндром.
-    #  print'ов и input'ов тут не должно быть.
-    #  Функция на вход принимает ранее полученные данные
-    #  (из функции get_input_parameters).
-    #  Функция на выход отдаёт результат необходимый для отображения работы программы,
-    #  который будет передан в функцию display_result.
+    return check
     pass
 
 
