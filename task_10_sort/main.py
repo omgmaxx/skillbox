@@ -1,45 +1,28 @@
 def get_input_parameters():
-    """
-    Получаем неотсортированный список чисел
-
-    :return: неотсортированный список чисел, например: [1, 4, -3, 0, 10]
-    :rtype: List[int]
-    """
-    # TODO: в этой функции пишем весь необходимый код для
-    #  получения входных параметров.
-    #  Логику расчётов тут не программируем
+    original_list = input('Изначальный список: ').strip('[]').replace(' ', '').split(',')
+    for i in range(len(original_list)):
+        original_list[i] = int(original_list[i])
+    print()
+    return original_list
     pass
 
 
 def display_result(sorted_list):
-    """
-    Выводим отсортированный список
 
-    :param sorted_list: отсортированный список, например: [-3, 0, 1, 4, 10]
-    :type sorted_list: List[int]
-    """
-    # TODO: в этой функции пишем весь необходимый код
-    #  для вывода результата в нужном формате.
-    #  Логику расчётов тут не программируем
+    print(f'Отсортированный список: {sorted_list}')
     pass
 
 
 def sort_list(original_list):
-    """
-    Сортируем список
-
-    :param original_list: Исходный список: [1, 4, -3, 0, 10]
-    :type original_list: List[int]
-
-    :return: отсортированный, например: [-3, 0, 1, 4, 10]
-    :rtype: List[int]
-    """
-    # TODO: в этой функции пишем логику сортировки списка.
-    #  print'ов и input'ов тут не должно быть.
-    #  Функция на вход принимает ранее полученные данные
-    #  (из функции get_input_parameters).
-    #  Функция на выход отдаёт результат необходимый для отображения работы программы,
-    #  который будет передан в функцию display_result.
+    for i in range(len(original_list)-1):
+        min = original_list[i]
+        coun_index = i
+        for j in range(i+1, len(original_list) -1 ):
+            if min > original_list[j]:
+                min = original_list[j]
+                coun_index = j
+        original_list[i], original_list[coun_index] = original_list[coun_index], original_list[i]
+    return original_list
     pass
 
 
