@@ -1,47 +1,35 @@
 def get_input_parameters():
-    """
-    Получаем список видеокарт
+    input_card_list = []
+    amount = int(input('Количество видеокарт: '))
 
-    :return: набор клеток, например: [3070, 2060, 3090, 3070, 3090]
-    :rtype: List[int]
-    """
-    # TODO: в этой функции пишем весь необходимый код для
-    #  получения входных параметров.
-    #  Логику расчётов тут не программируем
+    for i in range(amount):
+        v_card = int(input(f'{i + 1} Видеокарта: '))
+        input_card_list.append(v_card)
+
+    return input_card_list
     pass
 
 
 def display_result(old_video_cards, new_video_cards):
-    """
-    Выводим список оставшихся видеокарт
+    print(f'\nСтарый список видеокарт: {old_video_cards}')
+    print(f'Новый список видеокарт: {new_video_cards}')
 
-    :param old_video_cards: старый набор видеокарт, например: [3070, 2060, 3090, 3070, 3090]
-    :type old_video_cards: List[int]
-    :param new_video_cards: новый набор видеокарт, например: [3070, 2060, 3070]
-    :type new_video_cards: List[int]
-    """
-    # TODO: в этой функции пишем весь необходимый код
-    #  для вывода результата в нужном формате.
-    #  Логику расчётов тут не программируем
     pass
 
 
 def select_video_cards(video_cards):
-    """
-    Удаляем из списка видеокарт наибольшие элементы.
+    max_number = 0
+    new_card_list = []
 
-    :param video_cards: набор видеокарт, например: [3070, 2060, 3090, 3070, 3090]
-    :type video_cards: List[int]
+    for number in video_cards:
+        if number > max_number:
+            max_number = number
 
-    :return: набор оставшихся видеокарт, например: [3070, 2060, 3070]
-    :rtype: List[int]
-    """
-    # TODO: в этой функции пишем логику удаление из списка видеокарт наибольшие элементы.
-    #  print'ов и input'ов тут не должно быть.
-    #  Функция на вход принимает ранее полученные данные
-    #  (из функции get_input_parameters).
-    #  Функция на выход отдаёт результат необходимый для отображения работы программы,
-    #  который будет передан в функцию display_result.
+    for number in video_cards:
+        if number != max_number:
+            new_card_list.append(number)
+
+    return new_card_list
     pass
 
 
