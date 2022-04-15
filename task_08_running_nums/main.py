@@ -1,47 +1,28 @@
 def get_input_parameters():
-    """
-    Получаем сдвиг и начальны список
+    original_list = input('Изначальный список: ').strip('[]').replace(' ', '').split(',')
+    for i in range(len(original_list)):
+        original_list[i] = int(original_list[i])
 
-    :return: например: (3, [1, 4, -3, 0, 10])
-    :rtype: Tuple[int, List[int]]
-    """
-    # TODO: в этой функции пишем весь необходимый код для
-    #  получения входных параметров.
-    #  Логику расчётов тут не программируем
+    shift = int(input('Сдвиг: '))
+    shift = (abs(shift) % len(original_list)) * (shift**2)  #расчёт сдвига больше списка
+    number_list = []
+    print('Изначальный список: ', end='')
+
+    return int(shift), original_list
     pass
 
 
 def display_result(shifted_list):
-    """
-    Выводим получившиеся список
-
-    :param shifted_list: сдвинутый список, например: [5, 1, 2, 3, 4]
-    :type shifted_list: List[int]
-    """
-    # TODO: в этой функции пишем весь необходимый код
-    #  для вывода результата в нужном формате.
-    #  Логику расчётов тут не программируем
+    print(f'Сдвинутый список: {shifted_list}')
     pass
 
 
 def shift_list(shift, original_list):
-    """
-    Сдвигаем список на определённое количество элементов в право
+    shifted_list = []
+    for x in range(len(original_list)):
+        shifted_list.append(original_list[ (x - shift) ])
 
-    :param shift: сдвиг: 3
-    :type shift: int
-    :param original_list: Исходный список: [1, 4, -3, 0, 10]
-    :type original_list: List[int]
-
-    :return: сдвинутый список, например: [5, 1, 2, 3, 4]
-    :rtype: List[int]
-    """
-    # TODO: в этой функции пишем логику сдвига списка вправо на shift элементов.
-    #  print'ов и input'ов тут не должно быть.
-    #  Функция на вход принимает ранее полученные данные
-    #  (из функции get_input_parameters).
-    #  Функция на выход отдаёт результат необходимый для отображения работы программы,
-    #  который будет передан в функцию display_result.
+    return shifted_list
     pass
 
 

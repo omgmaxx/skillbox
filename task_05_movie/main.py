@@ -40,9 +40,8 @@ def add_favorite_film(new_favorite_films, available_films):
         else:
             missing_movies.append(movie)
 
-    tuple_movies = [loved_movies, missing_movies]
 
-    return tuple_movies
+    return loved_movies, missing_movies
     pass
 
 
